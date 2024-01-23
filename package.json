@@ -1,0 +1,54 @@
+{
+  "name": "swagger-to-typescript",
+  "version": "1.0.0",
+  "description": "Generate typescript interface base on swagger.json",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "clean": "rimraf dist",
+    "lint": "eslint src",
+    "prepare": "husky install",
+    "test": "vitest run --coverage"
+  },
+  "author": {
+    "name": "Tam Dao",
+    "email": "daotam4536@gmail.com",
+    "url": "https://github.com/tamdao"
+  },
+  "engines": {
+    "node": ">=18.0"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.11.5",
+    "@vitest/coverage-v8": "^1.2.1",
+    "eslint": "^8.56.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.2.4",
+    "rimraf": "^5.0.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
+    "unbuild": "^2.0.0",
+    "vitest": "^1.2.1"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "@typescript-eslint/parser": "^6.19.1",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-simple-import-sort": "^10.0.0"
+  }
+}
