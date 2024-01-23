@@ -4,13 +4,17 @@ import { Property, getSwaggerByUrl } from './swagger';
 import { isUrl } from './utils';
 
 export async function generate(url: string, output: string) {
-  const content = await generateTypeScriptInterfaces(url);
+  try {
+    const content = await generateTypeScriptInterfaces(url);
 
-  ensureDirectoryExistence(output);
+    ensureDirectoryExistence(output);
 
-  fs.writeFileSync(output, content);
+    await fs.promises.writeFile(output, content);
 
-  return content;
+    return content;
+  } catch (error) {
+    throw error;
+  }
 }
 
 export async function generateTypeScriptInterfaces(url: string): Promise<string> {
@@ -62,9 +66,11 @@ function generateTypeScriptType(property: Property): string {
 
 function ensureDirectoryExistence(filePath: string) {
   const dirname = path.dirname(filePath);
+
   if (fs.existsSync(dirname)) {
     return true;
   }
+
   ensureDirectoryExistence(dirname);
   fs.mkdirSync(dirname);
 }
