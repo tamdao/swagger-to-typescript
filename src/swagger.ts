@@ -24,8 +24,13 @@ export interface Definition {
 }
 
 export interface Swagger {
-  definitions: {
+  definitions?: {
     [key: string]: Definition;
+  };
+  components?: {
+    schemas: {
+      [key: string]: Definition;
+    };
   };
 }
 

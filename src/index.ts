@@ -26,7 +26,13 @@ export async function generateTypeScriptInterfaces(url: string): Promise<string>
 
   let content = '';
 
-  for (const [key, definition] of Object.entries(swagger.definitions)) {
+  const definitions = swagger.definitions || swagger.components?.schemas;
+
+  if (!definitions) {
+    return content;
+  }
+
+  for (const [key, definition] of Object.entries(definitions)) {
     if (definition.type === 'object') {
       content += `interface ${key} {\n`;
 
