@@ -34,7 +34,7 @@ export async function generateTypeScriptInterfaces(url: string): Promise<string>
 
   for (const [key, definition] of Object.entries(definitions)) {
     if (definition.type === 'object') {
-      content += `interface ${key} {\n`;
+      content += `export interface ${key} {\n`;
 
       if (definition.properties) {
         Object.entries(definition.properties).forEach(([propKey, propValue]) => {
