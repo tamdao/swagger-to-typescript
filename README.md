@@ -10,7 +10,7 @@ This library provides functionality to generate TypeScript interfaces from Swagg
 To use this library, include it in your project by importing the functions you need:
 
 ```typescript
-import { generate, generateTypeScriptInterfaces } from 'path-to-your-library';
+import { generate, generateTypeScriptInterfaces } from 'swagger-to-typescript-interface';
 ```
 
 ## Usage
