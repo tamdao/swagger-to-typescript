@@ -1,6 +1,6 @@
 {
   "name": "swagger-to-typescript-interface",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Generate typescript interface base on swagger.json",
   "type": "module",
   "exports": {

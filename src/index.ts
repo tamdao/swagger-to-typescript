@@ -11,7 +11,7 @@ export async function generate(url: string, output: string) {
 
     await fs.promises.writeFile(output, content);
 
-    return content;
+    return output;
   } catch (error) {
     throw error;
   }
