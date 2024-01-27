@@ -12,8 +12,8 @@ describe('index', () => {
     it('should generate interface and write output file', async () => {
       const url = 'https://dev-backend.trytemelio.com/api/swagger.json';
       const output = './output/swagger.ts';
-      const content = await generate(url, output);
-      expect(typeof content).toBe('string');
+      const result = await generate(url, output);
+      expect(result).equal(output);
     });
   });
 });

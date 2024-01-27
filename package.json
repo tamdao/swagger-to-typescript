@@ -1,6 +1,6 @@
 {
   "name": "swagger-to-typescript-interface",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Generate typescript interface base on swagger.json",
   "type": "module",
   "exports": {
@@ -23,6 +23,10 @@
     "prepare": "husky install",
     "test": "vitest run --coverage"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tamdao/swagger-to-typescript.git"
+  },
   "author": {
     "name": "Tam Dao",
     "email": "daotam4536@gmail.com",
@@ -32,6 +36,9 @@
     "node": ">=18.0"
   },
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tamdao/swagger-to-typescript/issues"
+  },
   "devDependencies": {
     "@types/node": "^20.11.5",
     "@vitest/coverage-v8": "^1.2.1",
