@@ -1,6 +1,6 @@
 {
   "name": "swagger-to-typescript-interface",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Generate typescript interface base on swagger.json",
   "type": "module",
   "exports": {
@@ -13,6 +13,9 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "bin": {
+    "swagger-to-typescript-interface": "bin/index.cjs"
+  },
   "files": [
     "dist"
   ],

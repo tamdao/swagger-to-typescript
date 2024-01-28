@@ -1,13 +1,14 @@
 # TypeScript Interface Generator
 
-This library provides functionality to generate TypeScript interfaces from Swagger JSON URLs. It includes two main functions:
-
-1. `generate`: Generates TypeScript interfaces and writes them to a `.ts` file.
-2. `generateTypeScriptInterfaces`: Generates TypeScript interfaces and returns the interface definitions as a string.
+This library provides functionality to generate TypeScript interfaces from Swagger JSON URLs. It includes two main functions for programmatic use and a Command Line Interface (CLI) for direct command-line usage.
 
 ## Installation
 
 To use this library, include it in your project by importing the functions you need:
+
+```sh
+npm install swagger-to-typescript-interface
+```
 
 ```typescript
 import { generate, generateTypeScriptInterfaces } from 'swagger-to-typescript-interface';
@@ -63,6 +64,35 @@ generateTypeScriptInterfaces('http://example.com/swagger.json')
   .then((definitions) => console.log(definitions))
   .catch((error) => console.error(error));
 ```
+
+### Command Line Interface (CLI)
+
+For those who prefer using a CLI, `swagger-to-typescript-interface` offers a simple yet powerful command-line tool.
+
+#### Installation
+
+If you haven't installed the package globally, you might need to do so to access the CLI:
+
+```sh
+npm install -g swagger-to-typescript-interface
+```
+
+#### Usage
+
+```sh
+swagger-to-typescript-interface --input <URL> --output <FILE>
+```
+
+- `-i, --input <value>`: URL to the Swagger JSON (required).
+- `-o, --output <value>`: Path for the output TypeScript file (required).
+
+#### Example
+
+```sh
+swagger-to-typescript-interface -i http://example.com/swagger.json -o ./types.ts
+```
+
+This command generates TypeScript interfaces from the Swagger JSON at the given URL and writes them to `types.ts`.
 
 ## License
 
